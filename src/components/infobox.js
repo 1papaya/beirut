@@ -90,7 +90,7 @@ export default (props) => {
             if (sliderInterval === null) {
               setSliderInterval(
                 setInterval(() => {
-                  setSliderValue((sliderValue) => sliderValue + daySec);
+                  setSliderValue((sliderValue) => sliderValue + daySec*2);
                 }, 1000)
               );
             } else {
@@ -180,7 +180,7 @@ export default (props) => {
           )
         </div>
       </Summary>
-      <Summary heading={"More Information"}>
+      <Summary heading={"Download Data"}>
         <div className="text">
           All data contributed to HOT Disaster Responses is available for free from
           OpenStreetMap under the very permissive and open ODbL license. For the
@@ -191,12 +191,8 @@ export default (props) => {
           or from the{" "}
           <a href="https://export.hotosm.org/en/v3/">HOT Export Tool</a>
         </div>
-        <div className="source">
-          (source:{" "}
-          <a href="https://wiki.openstreetmap.org/wiki/2020_Beirut_Port_Explosion">
-            OSM wiki
-          </a>
-          )
+        <div className="text" style={{marginTop: "0.5em"}}>
+          For more available open data related to the blast, visit <a href="https://openmaplebanon.org/">OpenMapLebanon.org</a>
         </div>
       </Summary>
     </div>
