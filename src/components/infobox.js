@@ -135,12 +135,12 @@ export default (props) => {
               className="color"
               style={{ backgroundColor: "rgba(252, 236, 164, 1)" }}
             ></span>
-            Validated Task{" "}
+            Mapped Task{" "}
             <span
               className="color"
               style={{ backgroundColor: "rgba(64, 172, 140, 1)" }}
             ></span>
-            Mapped Task{" "}
+            Validated Task{" "}
             <span className="color" style={{ backgroundColor: "#000" }}></span>
             Added Building*
           </div>
