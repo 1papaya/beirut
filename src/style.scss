@@ -59,9 +59,34 @@ body,
   }
 
   .source {
-      text-align: right;
-      margin: 0.1em 0 0 0;
-      font-size: 0.7em;
-      font-style: italic;
+    text-align: right;
+    margin: 0.1em 0 0 0;
+    font-size: 0.7em;
+    font-style: italic;
+  }
+
+  .timeline {
+    padding: 8px 10px 2px 10px;
+    margin: 20px 0;
+
+    .play {
+        vertical-align: text-bottom;
+        width: 10%;
+        display: inline-block;
+        text-align: left;
+        line-height: 40px;
+        height: 40px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .slider {
+      height: 35px;
+      width: 80%;
+      display: inline-block;
+      padding: 0 20px;
+    }
   }
 }

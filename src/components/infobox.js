@@ -1,11 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Slider from "rc-slider";
+
+import { FaPlayCircle, FaStopCircle } from "react-icons/fa";
 
 import "fontsource-barlow-condensed/latin-400-normal.css";
 import "fontsource-archivo/latin-400-normal.css";
 
+import "rc-slider/assets/index.css";
+
 import HotLogo from "../img/hot-logo.png";
 
 export default (props) => {
+  let aug8 = 1596499200 * 1000;
+  let sep23 = 1600819200 * 1000;
+  let daySec = 86400 * 1000;
+
+  let [sliderValue, setSliderValue] = useState(aug8);
+  useEffect(() => {
+    if (sliderValue > sep23) {
+      clearInterval(sliderInterval);
+      setSliderInterval(null);
+    }
+    props.onSliderChange(sliderValue);
+  }, [sliderValue]);
+
+  let [sliderInterval, setSliderInterval] = useState(null);
+
+  let [marks, setMarks] = useState({});
+  useEffect(() => {
+    setMarks(
+      Object.assign(
+        {},
+        ...[0, 10, 20, 30, 40, 50].map((day) => {
+          let newDay = aug8 + day * daySec;
+          let label = (
+            <>{new Date(newDay).toDateString().substr(4).substr(0, 6)}</>
+          );
+
+          return {
+            [newDay]: {
+              style: {
+                whiteSpace: "nowrap",
+                fontSize: "0.8rem",
+              },
+              label: label,
+            },
+          };
+        })
+      )
+    );
+  }, []);
+
   return (
     <div className="infobox">
       <div className="title">
@@ -21,7 +66,56 @@ export default (props) => {
           damage, and leaving an estimated 300,000 people homeless.
         </div>
         <div className="source">
-            (source: <a href="https://en.wikipedia.org/wiki/2020_Beirut_explosion">wikipedia</a>)
+          (source:{" "}
+          <a href="https://en.wikipedia.org/wiki/2020_Beirut_explosion">
+            wikipedia
+          </a>
+          )
+        </div>
+      </div>
+      <div className="timeline">
+        <div
+          className="play"
+          onClick={() => {
+            if (sliderInterval === null) {
+              setSliderValue(aug8);
+
+              let numDays = (sep23 - aug8) / daySec;
+
+              setSliderInterval(
+                setInterval(() => {
+                  setSliderValue((sliderValue) => sliderValue + daySec);
+                }, 250)
+              );
+            }
+            else {
+                clearInterval(sliderInterval);
+                setSliderInterval(null)
+            }
+          }}
+        >
+          {sliderInterval === null ? (
+            <FaPlayCircle
+              style={{ height: "30px", width: "30px", fill: "#dd371b" }}
+            />
+          ) : (
+            <FaStopCircle
+              style={{ height: "30px", width: "30px", fill: "#dd371b" }}
+            />
+          )}
+        </div>
+        <div className="slider">
+          <Slider
+            value={sliderValue}
+            min={aug8}
+            max={sep23}
+            marks={marks}
+            step={daySec}
+            onChange={setSliderValue}
+            onAfterChange={(e) => {
+              clearInterval(sliderInterval);
+            }}
+          />
         </div>
       </div>
     </div>
