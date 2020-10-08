@@ -8,9 +8,6 @@ aug10 = 1597017600 * 1000
 sep23 = 1600819200 * 1000
 daySec = 86400 * 1000
 
-sep4 = 1599177600 * 1000
-num_bldg_sep4 = 54155
-
 stats = {
     date: {
         "num_bldg": -1,
@@ -20,17 +17,15 @@ stats = {
     for date in range(aug4, sep23+1, daySec)
 }
 
-for date in range(aug4, sep23+1, daySec):
-    m = num_bldg_sep4 / ((sep4-aug4)/daySec) # buildings per day
+## Stats from QGIS
+buildings = gpd.GeoDataFrame.from_file("../data/buildings.geojson")
 
-    ## Assume linear increase in buildings until stats end sep4
-    ## No buildings mapped until task created aug 10
+
+for date in range(aug4, sep23+1, daySec):
     if date <= aug10:
         stats[date]["num_bldg"] = 0
-    elif date <= sep4:
-        stats[date]["num_bldg"] = round(m * ((date - aug10)/daySec))
     else:
-        stats[date]["num_bldg"] = 54155
+        stats[date]["num_bldg"] = len(buildings[buildings["dateValidated"]*1000 < date])
 
 ##
 
