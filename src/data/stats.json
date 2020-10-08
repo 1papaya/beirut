@@ -35,222 +35,222 @@
     "pct_validated": 0
   },
   "1597104000000": {
-    "num_bldg": 1747,
+    "num_bldg": 134,
     "pct_mapped": 8,
     "pct_validated": 2
   },
   "1597190400000": {
-    "num_bldg": 3494,
+    "num_bldg": 139,
     "pct_mapped": 18,
     "pct_validated": 2
   },
   "1597276800000": {
-    "num_bldg": 5241,
+    "num_bldg": 361,
     "pct_mapped": 23,
     "pct_validated": 2
   },
   "1597363200000": {
-    "num_bldg": 6988,
+    "num_bldg": 665,
     "pct_mapped": 29,
     "pct_validated": 4
   },
   "1597449600000": {
-    "num_bldg": 8735,
+    "num_bldg": 1129,
     "pct_mapped": 34,
     "pct_validated": 5
   },
   "1597536000000": {
-    "num_bldg": 10482,
+    "num_bldg": 1328,
     "pct_mapped": 36,
     "pct_validated": 5
   },
   "1597622400000": {
-    "num_bldg": 12229,
+    "num_bldg": 1328,
     "pct_mapped": 40,
     "pct_validated": 5
   },
   "1597708800000": {
-    "num_bldg": 13975,
+    "num_bldg": 1330,
     "pct_mapped": 44,
     "pct_validated": 5
   },
   "1597795200000": {
-    "num_bldg": 15722,
+    "num_bldg": 1808,
     "pct_mapped": 49,
     "pct_validated": 6
   },
   "1597881600000": {
-    "num_bldg": 17469,
+    "num_bldg": 2058,
     "pct_mapped": 54,
     "pct_validated": 7
   },
   "1597968000000": {
-    "num_bldg": 19216,
+    "num_bldg": 2657,
     "pct_mapped": 58,
     "pct_validated": 8
   },
   "1598054400000": {
-    "num_bldg": 20963,
+    "num_bldg": 2945,
     "pct_mapped": 61,
     "pct_validated": 9
   },
   "1598140800000": {
-    "num_bldg": 22710,
+    "num_bldg": 3276,
     "pct_mapped": 64,
     "pct_validated": 9
   },
   "1598227200000": {
-    "num_bldg": 24457,
+    "num_bldg": 5288,
     "pct_mapped": 67,
     "pct_validated": 12
   },
   "1598313600000": {
-    "num_bldg": 26204,
+    "num_bldg": 6955,
     "pct_mapped": 71,
     "pct_validated": 16
   },
   "1598400000000": {
-    "num_bldg": 27951,
+    "num_bldg": 7341,
     "pct_mapped": 75,
     "pct_validated": 16
   },
   "1598486400000": {
-    "num_bldg": 29698,
+    "num_bldg": 8011,
     "pct_mapped": 78,
     "pct_validated": 17
   },
   "1598572800000": {
-    "num_bldg": 31445,
+    "num_bldg": 9745,
     "pct_mapped": 81,
     "pct_validated": 20
   },
   "1598659200000": {
-    "num_bldg": 33192,
+    "num_bldg": 11444,
     "pct_mapped": 83,
     "pct_validated": 22
   },
   "1598745600000": {
-    "num_bldg": 34939,
+    "num_bldg": 14348,
     "pct_mapped": 84,
     "pct_validated": 25
   },
   "1598832000000": {
-    "num_bldg": 36686,
+    "num_bldg": 18053,
     "pct_mapped": 87,
     "pct_validated": 31
   },
   "1598918400000": {
-    "num_bldg": 38433,
+    "num_bldg": 18778,
     "pct_mapped": 95,
     "pct_validated": 32
   },
   "1599004800000": {
-    "num_bldg": 40180,
+    "num_bldg": 20105,
     "pct_mapped": 99,
     "pct_validated": 35
   },
   "1599091200000": {
-    "num_bldg": 41926,
+    "num_bldg": 21475,
     "pct_mapped": 99,
     "pct_validated": 37
   },
   "1599177600000": {
-    "num_bldg": 43673,
+    "num_bldg": 22228,
     "pct_mapped": 99,
     "pct_validated": 38
   },
   "1599264000000": {
-    "num_bldg": 54155,
+    "num_bldg": 23451,
     "pct_mapped": 99,
     "pct_validated": 40
   },
   "1599350400000": {
-    "num_bldg": 54155,
+    "num_bldg": 28210,
     "pct_mapped": 99,
     "pct_validated": 48
   },
   "1599436800000": {
-    "num_bldg": 54155,
+    "num_bldg": 30092,
     "pct_mapped": 99,
     "pct_validated": 51
   },
   "1599523200000": {
-    "num_bldg": 54155,
+    "num_bldg": 30898,
     "pct_mapped": 99,
     "pct_validated": 53
   },
   "1599609600000": {
-    "num_bldg": 54155,
+    "num_bldg": 33229,
     "pct_mapped": 99,
     "pct_validated": 57
   },
   "1599696000000": {
-    "num_bldg": 54155,
+    "num_bldg": 36086,
     "pct_mapped": 99,
     "pct_validated": 63
   },
   "1599782400000": {
-    "num_bldg": 54155,
+    "num_bldg": 37695,
     "pct_mapped": 99,
     "pct_validated": 65
   },
   "1599868800000": {
-    "num_bldg": 54155,
+    "num_bldg": 38810,
     "pct_mapped": 99,
     "pct_validated": 67
   },
   "1599955200000": {
-    "num_bldg": 54155,
+    "num_bldg": 41376,
     "pct_mapped": 100,
     "pct_validated": 71
   },
   "1600041600000": {
-    "num_bldg": 54155,
+    "num_bldg": 42591,
     "pct_mapped": 100,
     "pct_validated": 74
   },
   "1600128000000": {
-    "num_bldg": 54155,
+    "num_bldg": 44813,
     "pct_mapped": 100,
     "pct_validated": 76
   },
   "1600214400000": {
-    "num_bldg": 54155,
+    "num_bldg": 46844,
     "pct_mapped": 100,
     "pct_validated": 79
   },
   "1600300800000": {
-    "num_bldg": 54155,
+    "num_bldg": 47858,
     "pct_mapped": 100,
     "pct_validated": 81
   },
   "1600387200000": {
-    "num_bldg": 54155,
+    "num_bldg": 49369,
     "pct_mapped": 100,
     "pct_validated": 82
   },
   "1600473600000": {
-    "num_bldg": 54155,
+    "num_bldg": 53378,
     "pct_mapped": 100,
     "pct_validated": 87
   },
   "1600560000000": {
-    "num_bldg": 54155,
+    "num_bldg": 55753,
     "pct_mapped": 100,
     "pct_validated": 91
   },
   "1600646400000": {
-    "num_bldg": 54155,
+    "num_bldg": 57232,
     "pct_mapped": 100,
     "pct_validated": 94
   },
   "1600732800000": {
-    "num_bldg": 54155,
+    "num_bldg": 57963,
     "pct_mapped": 100,
     "pct_validated": 95
   },
   "1600819200000": {
-    "num_bldg": 54155,
+    "num_bldg": 62147,
     "pct_mapped": 100,
     "pct_validated": 100
   }
