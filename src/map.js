@@ -165,7 +165,7 @@ const Map = (props) => {
               [">=", sliderDate / 1000, ["get", "dateValidated"]],
             ]}
             paint={{
-              "fill-extrusion-color": "#000",
+              "fill-extrusion-color": "rgba(0,0,0,0.8)",
               "fill-extrusion-height": 20,
               "fill-extrusion-base": 0,
               "fill-extrusion-opacity": 0.8,

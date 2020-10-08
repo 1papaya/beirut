@@ -59,22 +59,6 @@ export default (props) => {
         <img src={HotLogo} />
         2020 Beirut Explosion Response
       </div>
-      <div className="summary">
-        <div className="heading">Disaster Background</div>
-        <div className="text">
-          On 4 August 2020, a large amount of ammonium nitrate stored at the
-          port of the city of Beirut, the capital of Lebanon, exploded, causing
-          at least 200 deaths, 6,500 injuries, and US$15 billion in property
-          damage, and leaving an estimated 300,000 people homeless.
-        </div>
-        <div className="source">
-          (source:{" "}
-          <a href="https://en.wikipedia.org/wiki/2020_Beirut_explosion">
-            wikipedia
-          </a>
-          )
-        </div>
-      </div>
       <div className="timeline">
         <div className="stats">
           <div className="stat">
@@ -82,8 +66,10 @@ export default (props) => {
             <div className="name">days since explosion</div>
           </div>
           <div className="stat">
-            <div className="number">{sliderValue in Stats ? Stats[sliderValue]["num_bldg"] : 54155}</div>
-            <div className="name">buildings mapped</div>
+            <div className="number">
+              {sliderValue in Stats ? Stats[sliderValue]["num_bldg"] : 54155}
+            </div>
+            <div className="name">buildings mapped*</div>
           </div>
           <div className="stat">
             <div className="number percent">
@@ -104,8 +90,8 @@ export default (props) => {
             if (sliderInterval === null) {
               setSliderInterval(
                 setInterval(() => {
-                  setSliderValue((sliderValue) => sliderValue + daySec*2);
-                }, 1500)
+                  setSliderValue((sliderValue) => sliderValue + daySec);
+                }, 1000)
               );
             } else {
               clearInterval(sliderInterval);
@@ -137,6 +123,104 @@ export default (props) => {
           />
         </div>
       </div>
+      <Summary heading={"Map Information"}>
+        <div className="text">
+          This is an online interactive map of the Humanitarian OpenStreetMap
+          Team's disaster activation response to the 2020 Beirut Explosion.
+          Press the red play button above to visualize the event and coordinated
+          disaster response.
+          <div className="legend">
+            Legend:{" "}
+            <span
+              className="color"
+              style={{ backgroundColor: "rgba(252, 236, 164, 1)" }}
+            ></span>
+            Validated Task{" "}
+            <span
+              className="color"
+              style={{ backgroundColor: "rgba(64, 172, 140, 1)" }}
+            ></span>
+            Mapped Task{" "}
+            <span className="color" style={{ backgroundColor: "#000" }}></span>
+            Added Building*
+          </div>
+          <div className="footnote">
+            * buildings number is an estimate which assumes all buildings
+            present in each task square were added during HOT campaign.
+          </div>
+        </div>
+      </Summary>
+      <Summary heading={"Disaster Background"}>
+        <div className="text">
+          On 4 August 2020, a large amount of ammonium nitrate stored at the
+          port of the city of Beirut, the capital of Lebanon, exploded, causing
+          at least 200 deaths, 6,500 injuries, and US$15 billion in property
+          damage, and leaving an estimated 300,000 people homeless.
+        </div>
+        <div className="source">
+          (source:{" "}
+          <a href="https://en.wikipedia.org/wiki/2020_Beirut_explosion">
+            wikipedia
+          </a>
+          )
+        </div>
+      </Summary>
+      <Summary heading={"HOT Response"}>
+        <div className="text">
+          On 9 August 2020, the Lebanese Red Cross, after determining verifiable
+          damage had been reported as far as 24 kilometers from the epicenter of
+          the explosion, made a request of HOT to organize the mapping of Beirut
+          out to roughly 8 kilometers away from the port.
+        </div>
+        <div className="source">
+          (source:{" "}
+          <a href="https://wiki.openstreetmap.org/wiki/2020_Beirut_Port_Explosion">
+            OSM wiki
+          </a>
+          )
+        </div>
+      </Summary>
+      <Summary heading={"More Information"}>
+        <div className="text">
+          All data contributed to HOT Disaster Responses is available for free from
+          OpenStreetMap under the very permissive and open ODbL license. For the
+          most up-to-date copy of the data, it is available for{" "}
+          <a href="https://download.geofabrik.de/asia/lebanon.html">
+            download from GeoFabrik
+          </a>{" "}
+          or from the{" "}
+          <a href="https://export.hotosm.org/en/v3/">HOT Export Tool</a>
+        </div>
+        <div className="source">
+          (source:{" "}
+          <a href="https://wiki.openstreetmap.org/wiki/2020_Beirut_Port_Explosion">
+            OSM wiki
+          </a>
+          )
+        </div>
+      </Summary>
+    </div>
+  );
+};
+
+let Summary = (props) => {
+  let [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="summary">
+      <div
+        className="heading"
+        style={{
+          textDecoration: isOpen ? "underline" : "none",
+          marginBottom: isOpen ? "0.35em" : "0",
+        }}
+      >
+        {props.heading}
+        <div className="closeopen" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? "close" : "open"}
+        </div>
+      </div>
+      {isOpen && props.children}
     </div>
   );
 };
