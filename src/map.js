@@ -158,18 +158,13 @@ const Map = (props) => {
         >
           <Layer
             id="buildings-extruded"
-            type="fill-extrusion"
+            type="fill"
             source-layer="buildings"
             filter={[
               "all",
               [">=", sliderDate / 1000, ["get", "dateValidated"]],
             ]}
-            paint={{
-              "fill-extrusion-color": "rgba(0,0,0,0.8)",
-              "fill-extrusion-height": 20,
-              "fill-extrusion-base": 0,
-              "fill-extrusion-opacity": 0.8,
-            }}
+            paint={{}}
           />
         </Source>
       </MapGL>
