@@ -11,6 +11,12 @@ body,
   font-family: Archivo;
 }
 
+.hover-pointer {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .infobox {
   position: absolute;
   text-align: right;
@@ -66,7 +72,7 @@ body,
   }
 
   .timeline {
-    padding: 8px 10px 2px 10px;
+    padding: 8px 10px 10px 10px;
     margin: 20px 0;
 
     .play {
@@ -88,5 +94,36 @@ body,
       display: inline-block;
       padding: 0 20px;
     }
+  }
+
+  .stats {
+      background: #fff;
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+
+      & .stat {
+          width: 25%;
+          text-align: center;
+          padding: 8px 0 12px 0;
+
+          & .number {
+              font-family: "Barlow Condensed";
+              font-size: 1.8em;
+
+              &.percent {
+                  &:after {
+                      content: "%";
+                      display: inline;
+                  }
+              }
+          }
+
+          & .name {
+              font-size: 0.8rem;
+          }
+      }
   }
 }

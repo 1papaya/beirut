@@ -8,6 +8,8 @@ import "fontsource-archivo/latin-400-normal.css";
 
 import "rc-slider/assets/index.css";
 
+import Stats from "../data/stats.json";
+
 import HotLogo from "../img/hot-logo.png";
 
 export default (props) => {
@@ -74,23 +76,40 @@ export default (props) => {
         </div>
       </div>
       <div className="timeline">
+        <div className="stats">
+          <div className="stat">
+            <div className="number">{(sliderValue - aug8) / daySec}</div>
+            <div className="name">days since explosion</div>
+          </div>
+          <div className="stat">
+            <div className="number">{sliderValue in Stats ? Stats[sliderValue]["num_bldg"] : 54155}</div>
+            <div className="name">buildings mapped</div>
+          </div>
+          <div className="stat">
+            <div className="number percent">
+              {sliderValue in Stats ? Stats[sliderValue]["pct_mapped"] : 100}
+            </div>
+            <div className="name">tasks mapped</div>
+          </div>
+          <div className="stat">
+            <div className="number percent">
+              {sliderValue in Stats ? Stats[sliderValue]["pct_validated"] : 100}
+            </div>
+            <div className="name">tasks validated</div>
+          </div>
+        </div>
         <div
           className="play"
           onClick={() => {
             if (sliderInterval === null) {
-              setSliderValue(aug8);
-
-              let numDays = (sep23 - aug8) / daySec;
-
               setSliderInterval(
                 setInterval(() => {
                   setSliderValue((sliderValue) => sliderValue + daySec);
                 }, 250)
               );
-            }
-            else {
-                clearInterval(sliderInterval);
-                setSliderInterval(null)
+            } else {
+              clearInterval(sliderInterval);
+              setSliderInterval(null);
             }
           }}
         >

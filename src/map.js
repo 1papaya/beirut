@@ -96,6 +96,7 @@ const Map = (props) => {
               latitude={33.901389}
             >
               <img
+                className="hover-pointer"
                 src={BlastImg}
                 style={{ transform: "translate(-50%, -50%) scale(-0.6, -0.6)" }}
               />
