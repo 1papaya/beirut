@@ -8,7 +8,7 @@ const BABEL_CONFIG = {
 const config = {
   devServer: {
     disableHostCheck: true,
-    // contentBase: resolve("dist"),
+    contentBase: resolve("dist"),
     publicPath: "/",
     headers: {
       "Access-Control-Allow-Origin": "*",
