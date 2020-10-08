@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "webpack-dev-server --config=webpack.config.js --progress --hot",
-    "serve": "webpack --config=webpack.config.js --mode=production"
+    "gen_tiles": "npm run gen_tiles:mbtiles && npm run gen_tiles:folder",
+    "gen_tiles:mbtiles": "tippecanoe --drop-densest-as-needed --force -z 18 -r1 -o \"src/data/buildings.mbtiles\" src/data/buildings.geojson",
+    "gen_tiles:folder": "tippecanoe --no-tile-compression --drop-densest-as-needed --force -z 18 -r1 -e \"dist/buildings/\" src/data/buildings.geojson",
+    "serve": "npm run serve:app && npm run serve:mbtiles",
+    "serve:app": "webpack --config=webpack.config.js --mode=production",
+    "serve:mbtiles": "cd src/data/ && mbtiles2ungzpbf -f buildings.mbtiles -d ../../dist/buildings/"
   },
   "repository": {
     "type": "git",
@@ -31,6 +36,7 @@
     "fontsource-barlow-condensed": "^3.0.9",
     "html-webpack-plugin": "^4.5.0",
     "json-loader": "^0.5.7",
+    "mbtiles2ungzpbf": "^1.1.5",
     "node-sass": "^4.14.1",
     "rc-slider": "^9.5.2",
     "rc-tooltip": "^4.2.3",

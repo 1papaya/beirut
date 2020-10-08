@@ -104,8 +104,8 @@ export default (props) => {
             if (sliderInterval === null) {
               setSliderInterval(
                 setInterval(() => {
-                  setSliderValue((sliderValue) => sliderValue + daySec);
-                }, 250)
+                  setSliderValue((sliderValue) => sliderValue + daySec*2);
+                }, 1500)
               );
             } else {
               clearInterval(sliderInterval);
